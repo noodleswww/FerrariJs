@@ -4,17 +4,17 @@
   "description": "javascript extension",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "test": "make test"
   },
   "scripts": {
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "report-coverage": "cat ./coverage/lcov.info | codecov --token=:0cf04779-8004-428b-9756-053e34ab8dda",
     "test": "mocha test/**/*.js -w --compilers js:babel/register ",
     "test:single": "istanbul cover -x *.test.js _mocha -- -R spec test/**/*.js --compilers js:babel/register"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noodleswww/jsExtension.git"
+    "url": "git+https://github.com/noodleswww/FerrariJs.git"
   },
   "keywords": [
     "javascript",
@@ -22,7 +22,7 @@
     "Array",
     "RegExp"
   ],
-  "homepage": "https://github.com/noodleswww/jsExtension#readme",
+  "homepage": "https://github.com/noodleswww/FerrariJs#readme",
   "devDependencies": {
     "autod": "2.4.2",
     "babel": "^5.8.21",
