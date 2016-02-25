@@ -4,6 +4,7 @@ TIMEOUT = 20000
 MOCHA_OPTS =
 ISTANBUL = ./node_modules/.bin/istanbul
 MOCHA = ./node_modules/.bin/_mocha
+WEBPACK= ./node_modules/.bin/webpack
 
 clean:
 	@rm -rf build coverage node_modules
@@ -16,6 +17,9 @@ test:
 
 test-cov:
 	@$(ISTANBUL) cover -x *.test.js _mocha -- -R spec test/**/*.js --compilers js:babel/register
+
+prebuild:
+	@$(WEBPACK)
 
 test-all: test-cov
 
