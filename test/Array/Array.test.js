@@ -1,5 +1,5 @@
 import 'should';
-import ArrayExt from '../../src/Array.Extension.js';
+import ArrayExt from '../../src/Array.Extension';
 
 const arrayExt = new ArrayExt();
 
