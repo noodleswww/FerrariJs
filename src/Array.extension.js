@@ -2,19 +2,19 @@
   let hasDefine = typeof define === 'function';
   let hasExports = typeof module !== 'undefined' && module.exports;
 
-  if (hasDefine) {
-    define('ArrayExtension', definition);
-  } else if (hasExports) {
-    module.exports = definition();
-  } else {
-    this[name] = definition();
-  }
+  module.exports = definition();
 })('ArrayExtension', function () {
   const ArrayExtension = function () {
     if (!(this instanceof ArrayExtension)) {
       return new ArrayExtension();
     }
     return this;
+  };
+
+  const _removeUndefinedEleFromArr = function (arr) {
+    return arr.filter(function (item) {
+      return item !==undefined;
+    });
   };
 
   /**
@@ -31,28 +31,26 @@
   };
 
   /**
-   * 移除数组重复元素
+   * 移除数组重复元素, 返回全新数组, 老数组重复占位
    * @param arr
-   * @param returnType
    * @returns {*}
    */
-  ArrayExtension.prototype.removeRepeat = function (arr, returnType) {
-    const tmpArr = returnType ? this.clone(arr) : arr;
-    const len = tmpArr.length;
+  ArrayExtension.prototype.removeRepeat = function (arr) {
+    const len = arr.length;
     for (let i = 0; i < len; i++) {
-      let ele = tmpArr[i];
+      let ele = arr[i];
       let currIdx = i;
       for (let j = 0; j < len; j++) {
-        let item = tmpArr[j];
+        let item = arr[j];
         if (currIdx === j) {
           continue;
         }
         if (ele === item) {
-          delete tmpArr[j];
+          delete arr[j];
         }
       }
     }
-    return _removeUndefinedEleFromArr(tmpArr);
+    return _removeUndefinedEleFromArr(arr);
   };
 
   /**
@@ -85,5 +83,9 @@
     const delEle = arr[idx];
     this.delForEle(delEle, arr, 0);
     return _removeUndefinedEleFromArr(arr);
-  }
+  };
+
+  ArrayExtension.ArrayExtension = ArrayExtension;
+
+  return ArrayExtension;
 });

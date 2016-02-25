@@ -1,5 +1,5 @@
 
-class RegExtension{
+export default class RegExtension{
 
     /**
      * 身份证15/18
