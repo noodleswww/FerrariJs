@@ -5,12 +5,12 @@ const arrayExt = new ArrayExt();
 
 describe('test/Array/Array.test.js', ()=> {
   describe('constructor', function () {
-    it('should get an instanceOf ArrayExtension with new', function () {
+    it('should get an instanceOf ArrayExt with new', function () {
       const arrayExt = new ArrayExt();
       arrayExt.should.be.an.instanceOf(ArrayExt);
     });
 
-    it('should get an instanceOf ArrayExtension without new', function () {
+    it('should get an instanceOf ArrayExt without new', function () {
       const arrayExt = ArrayExt();
       arrayExt.should.be.an.instanceOf(ArrayExt);
     });

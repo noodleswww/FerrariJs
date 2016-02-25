@@ -3,10 +3,10 @@
   let hasExports = typeof module !== 'undefined' && module.exports;
 
   module.exports = definition();
-})('ArrayExtension', function () {
-  const ArrayExtension = function () {
-    if (!(this instanceof ArrayExtension)) {
-      return new ArrayExtension();
+})('ArrayExt', function () {
+  const ArrayExt = function () {
+    if (!(this instanceof ArrayExt)) {
+      return new ArrayExt();
     }
     return this;
   };
@@ -22,7 +22,7 @@
    * @param arr
    * @returns {Array}
    */
-  ArrayExtension.prototype.clone = function (arr) {
+  ArrayExt.prototype.clone = function (arr) {
     let cloneArr = [];
     for (let i = 0, len = arr.length; i < len; i++) {
       cloneArr[i] = arr[i];
@@ -35,7 +35,7 @@
    * @param arr
    * @returns {*}
    */
-  ArrayExtension.prototype.removeRepeat = function (arr) {
+  ArrayExt.prototype.removeRepeat = function (arr) {
     const len = arr.length;
     for (let i = 0; i < len; i++) {
       let ele = arr[i];
@@ -60,7 +60,7 @@
    * @param isMulti
    * @returns {*}
    */
-  ArrayExtension.prototype.delForEle = function (ele, arr, isMulti) {
+  ArrayExt.prototype.delForEle = function (ele, arr, isMulti) {
     isMulti = isMulti || false;
     for (let i = 0, len = arr.length; i < len; i++) {
       if (ele === arr[i]) {
@@ -79,13 +79,13 @@
    * @param arr
    * @returns {*}
    */
-  ArrayExtension.prototype.delForIdx = function (idx, arr) {
+  ArrayExt.prototype.delForIdx = function (idx, arr) {
     const delEle = arr[idx];
     this.delForEle(delEle, arr, 0);
     return _removeUndefinedEleFromArr(arr);
   };
 
-  ArrayExtension.ArrayExtension = ArrayExtension;
+  ArrayExt.ArrayExt = ArrayExt;
 
-  return ArrayExtension;
+  return ArrayExt;
 });

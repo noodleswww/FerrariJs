@@ -1,2 +1,2 @@
-import './Array.Extension.js';
-import './RegExp.Extension.js';
+import './ArrayExt.js';
+import './RegExpExt.js';
