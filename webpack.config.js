@@ -5,8 +5,8 @@ module.exports = {
   devtools: 'cheap-module-eval-source-map',
   entry: {
     app: './src/app.js',
-    'Array.Extension': ['./src/Array.Extension.js'],
-    'RegExp.Extension': ['./src/RegExp.Extension.js'],
+    'Array.Extension': ['./src/ArrayExt.js'],
+    'RegExp.Extension': ['./src/RegExpExt.js'],
   },
   output: {
     path: path.join(__dirname, 'build'),
