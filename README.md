@@ -9,15 +9,12 @@
 ```
 FerrariJs/
 ├── src/
-│   ├── apis.js
-│   └── index.js
+│   ├── Array.Extension.js
+│   └── RegExp.Extension.js
 ├── test/
-│   ├── bootstrap.js
-│   └── procession.js
+│   ├── Array
+│   └── RegExp.js
 ├── build/
-│   ├── redis.js
-│   ├── redisCache.js
-│   └── validateCode.js
 ```
 
 ## Bugs and feature requests
