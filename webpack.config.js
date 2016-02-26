@@ -5,15 +5,17 @@ module.exports = {
   devtools: 'cheap-module-eval-source-map',
   entry: {
     app: './src/app.js',
-    'Array.Extension': ['./src/ArrayExt.js'],
-    'RegExp.Extension': ['./src/RegExpExt.js'],
+    //'ArrayExt': ['./src/ArrayExt.js'],
+    //'RegExpExt': ['./src/RegExpExt.js'],
   },
   output: {
     path: path.join(__dirname, 'build'),
     filename: `[name].js`,
+    library: ["FerrariJs", "[name]"],
+    libraryTarget: "umd"
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('app', 'app.js'),
+    //new webpack.optimize.CommonsChunkPlugin('app', 'app.js'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin()
   ],
