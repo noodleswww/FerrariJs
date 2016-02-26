@@ -1,5 +1,7 @@
 # FerrariJs
 
+[![Build Status](https://secure.travis-ci.org/noodleswww/FerrariJs.png)](https://travis-ci.org/noodleswww/FerrariJs)
+
 
 ## 介绍
 
